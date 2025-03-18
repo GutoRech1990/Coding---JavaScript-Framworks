@@ -4,7 +4,11 @@ import JobList from './JobList'
 const JobListItem = () => {
     return (
         <div>
-            
+
+            <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">
+                Parcourir jobs
+            </h2>
+
             <JobList>
                 <div className="bg-white rounded-xl shadow-md relative">
                     <div className="p-4">
@@ -40,6 +44,7 @@ const JobListItem = () => {
                     </div>
                 </div>
             </JobList>
+
             <JobList>
                 <div className="bg-white rounded-xl shadow-md relative">
                     <div className="p-4">
@@ -75,6 +80,7 @@ const JobListItem = () => {
                     </div>
                 </div>
             </JobList>
+
             <JobList>
                 <div className="bg-white rounded-xl shadow-md relative">
                     <div className="p-4">
