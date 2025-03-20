@@ -1,15 +1,15 @@
-import React from 'react'
-import Exemple from './Exemple'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+const router = createBrowserRouter(
+  createRoutesFromElements(<Route path="/" element={<h1>Bonjour</h1>}/>)
+)
 
 const App = () => {
-  return (
-    <div>
-      <Exemple>
-        <h1>Bonjour</h1>
-        <p>Merci</p>
-      </Exemple>
-    </div>
-  )
-}
+  return <RouterProvider router={router}/>;
+};
 
-export default App
+export default App;

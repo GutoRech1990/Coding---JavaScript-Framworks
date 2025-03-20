@@ -1,0 +1,87 @@
+
+    [
+      {
+      "id": "1",
+      "title": "Développeur React Senior",
+      "type": "Temps plein",
+      "description": "Nous recherchons un développeur talentueux pour rejoindre notre équipe. Le candidat idéal doit avoir de solides compétences en HTML, CSS et JavaScript, avec une expérience d'au moins 10 ans avec le framework JavaScript React.",
+      "location": "Kirchberg, Luxembourg",
+      "salary": "€70K - €80K",
+      "company": {
+        "name": "Tech Corp",
+        "description": "Tech Corp est une entreprise technologique de premier plan spécialisée dans le développement Web et les solutions numériques. Nous sommes fiers de fournir des produits et des services de haute qualité à nos clients tout en favorisant un environnement de travail collaboratif et innovant.",
+        "contactEmail": "contact@loremipsum.com",
+        "contactPhone": "1111-111-1111"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Développeur front-end (Angular)",
+      "type": "Télétravail",
+      "location": "Barcelone, Espagne",
+      "description": "Rejoignez notre équipe en tant que développeur front-end dans la ville ensoleillée de Barcelone. Nous recherchons une personne motivée et passionnée.",
+      "salary": "€70K - €80K",
+      "company": {
+        "name": "Castelan Solutions",
+        "description": "Veneer Solutions est une agence créative spécialisée dans la conception et le développement numérique. Notre équipe se consacre à repousser les limites de la créativité et de l’innovation pour offrir des résultats exceptionnels à nos clients.",
+        "contactEmail": "contact@loremipsum.com",
+        "contactPhone": "2222-222-2222"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Développeur back-end (C#)",
+      "type": "Télétravail",
+      "location": " Lisbonne, Portugal",
+      "description": "Vous êtes passionné par le développement back-end ? Rejoignez notre équipe dans la ville dynamique de Lisbonne, et travaillez sur des projets passionnants qui font la différence.",
+      "salary": "€70K - €80K",
+      "company": {
+        "name": "RedBridge Company",
+        "description": "RedBridge Company est une entreprise technologique de premier plan spécialisée dans les solutions numériques pour les entreprises de toutes tailles. En mettant l’accent sur l’innovation et la satisfaction de la clientèle, nous nous engageons à fournir des produits et des services de pointe.",
+        "contactEmail": "contact@loremipsum.com",
+        "contactPhone": "3333-333-3333"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Développeur Front-End React",
+      "type": "Mi-temps",
+      "description": "Rejoignez notre équipe en tant que développeur front-end à temps partiel dans la belle ville de Belval. Nous recherchons une personne motivée et passionnée par la création d’expériences utilisateur engageantes. Ce poste offre des horaires flexibles.",
+      "location": "Belval, Luxembourg",
+      "salary": "€60K - €70K",
+      "company": {
+        "name": "Acier Industries",
+        "description": "Acier Industries est une startup dynamique spécialisée dans le marketing digital et le développement web. Nous nous engageons à favoriser un lieu de travail diversifié et inclusif où la créativité et l’innovation prospèrent.",
+        "contactEmail": "contact@loremipsum.com",
+        "contactPhone": "4444-444-4444"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Développeur Full-Stack React et C#",
+      "type": "Temps plein",
+      "description": "Opportunité passionnante pour un développeur full-stack à temps plein dans la ville animée de Leudelange. Nous recherchons une personne talentueuse passionnée par la création d’applications Web élégantes et évolutives. Rejoignez notre équipe et ayez un impact !",
+      "location": "Leudelange, Luxembourg",
+      "salary": "€90K - €100K",
+      "company": {
+        "name": "Gromper Technologies",
+        "description": "Gromper Technologies est une entreprise technologique en pleine croissance spécialisée dans les solutions de commerce électronique. Nous offrons un environnement de travail dynamique et collaboratif où les employés sont encouragés à penser de manière créative et à innover.",
+        "contactEmail": "contact@loremipsum.com",
+        "contactPhone": "5555-555-5555"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Développeur React Native",
+      "type": "Télétravail",
+      "description": "Rejoignez notre équipe en tant que développeur front-end dans la belle ville de Paris. Nous recherchons une personne compétente et enthousiaste pour nous aider à créer des solutions Web innovantes. Salaire compétitif et excellents avantages sociaux disponibles.",
+      "location": "Paris, France",
+      "salary": "€100K - €110K",
+      "company": {
+        "name": "Eiffel Solutions INC",
+        "description": "Eiffel Solutions est une entreprise technologique de premier plan spécialisée dans le développement de logiciels et le marketing numérique. Nous nous engageons à fournir à nos clients des solutions de pointe et à nos employés un environnement de travail favorable et enrichissant.",
+        "contactEmail": "contact@ipsumlorem.com",
+        "contactPhone": "555-555-5555"
+      }
+    }
+  ]
