@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import {FaLocationDot} from 'react-icons/fa6'
 
 const JobList = ({ job }) => {
     const [showFullDesc, setShowFullDesc] = useState(false);
@@ -30,7 +31,7 @@ const JobList = ({ job }) => {
 
                     <div className="flex flex-col lg:flex-row justify-between mb-4">
                         <div className="text-orange-700 mb-3">
-                            <i className="fa-solid fa-location-dot text-lg"></i>
+                            <FaLocationDot className="inline mr-1 mb-1"/>
                             {job.location}
                         </div>
                         <a
