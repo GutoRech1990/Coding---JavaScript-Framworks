@@ -1,6 +1,6 @@
-
-    [
-      {
+{
+  "jobs": [
+    {
       "id": "1",
       "title": "Développeur React Senior",
       "type": "Temps plein",
@@ -85,3 +85,4 @@
       }
     }
   ]
+}

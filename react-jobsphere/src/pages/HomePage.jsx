@@ -6,7 +6,7 @@ const HomePage = () => {
     return <div>
         <Hero />
         <Carts />
-        <JoblistItem />
+        <JoblistItem isHome="true" />
     </div>;
 };
 
