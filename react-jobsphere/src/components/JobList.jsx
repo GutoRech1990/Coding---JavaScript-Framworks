@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import {FaLocationDot} from 'react-icons/fa6'
+import { Link } from 'react-router-dom';
 
 const JobList = ({ job }) => {
     const [showFullDesc, setShowFullDesc] = useState(false);
@@ -34,12 +35,12 @@ const JobList = ({ job }) => {
                             <FaLocationDot className="inline mr-1 mb-1"/>
                             {job.location}
                         </div>
-                        <a
-                            href="/job"
+                        <Link
+                            to={`/job/${job.id}`}
                             className="h-[36px] bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-center text-sm"
                         >
                             Lire plus
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,41 @@
+import { Link, useParams } from "react-router-dom"
+import { FaLocationDot, FaArrowLeft } from 'react-icons/fa6'
+import { useEffect, useState } from "react"
+import Spinner from "../components/Spinner"
+
 const JobPage = () => {
+    const [job, setJob] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const { id } = useParams();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`http://localhost:8000/jobs/${id}`);
+                const result = await response.json();
+                console.log(result);
+                setJob(result);
+            }
+            catch (error) {
+                console.log(error);
+            }
+            finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    });
     return (
         <div>
+            loading ? (<Spinner loading={loading} />) :
             <section>
                 <div className="container m-auto py-6 px-6">
-                    <a
-                        href="/jobs.html"
+                    <Link
+                        to="/jobs"
                         className="text-red-500 hover:text-red-600 flex items-center"
                     >
-                        <i className="fas fa-arrow-left mr-2"></i> Revenir à la liste des jobs
-                    </a>
+                        <FaArrowLeft className="mr-2"></FaArrowLeft> Revenir à la liste des jobs
+                    </Link>
                 </div>
             </section>
 
@@ -19,17 +46,17 @@ const JobPage = () => {
                             <div
                                 className="bg-white p-6 rounded-lg shadow-md text-center md:text-left"
                             >
-                                <div className="text-gray-500 mb-4">Temps plein</div>
+                                <div className="text-gray-500 mb-4">{job.type}</div>
                                 <h1 className="text-3xl font-bold mb-4">
-                                    Développeur React Senior
+                                    {job.title}
                                 </h1>
                                 <div
                                     className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
                                 >
-                                    <i
+                                    <FaLocationDot
                                         className="fa-solid fa-location-dot text-lg text-orange-700 mr-2"
-                                    ></i>
-                                    <p className="text-orange-700">Kirchberg, Luxembourg</p>
+                                    ></FaLocationDot>
+                                    <p className="text-orange-700">{job.location}</p>
                                 </div>
                             </div>
 
@@ -39,12 +66,12 @@ const JobPage = () => {
                                 </h3>
 
                                 <p className="mb-4">
-                                    Nous recherchons un développeur talentueux pour rejoindre notre équipe. Le candidat idéal doit avoir de solides compétences en HTML, CSS et JavaScript, avec une expérience d'au moins 10 ans avec le framework JavaScript React.
+                                    {job.description}
                                 </p>
 
                                 <h3 className="text-red-800 text-lg font-bold mb-2">Salaire</h3>
 
-                                <p className="mb-4">€70K - €80K / an</p>
+                                <p className="mb-4">{job.salary} / an</p>
                             </div>
                         </main>
 
@@ -53,15 +80,15 @@ const JobPage = () => {
                             <div className="bg-white p-6 rounded-lg shadow-md">
                                 <h3 className="text-xl font-bold mb-6">Entreprise</h3>
 
-                                <h2 className="text-2xl">Tech Corp</h2>
+                                <h2 className="text-2xl">{job.company.description}</h2>
 
                                 <p className="my-2">
-                                    Tech Corp est une entreprise technologique de premier plan spécialisée dans le développement Web et les solutions numériques. Nous sommes fiers de fournir des produits et des services de haute qualité à nos clients tout en favorisant un environnement de travail collaboratif et innovant.
+                                    {job.company.description}
                                 </p>
 
                                 <hr className="my-4" />
 
-                                <h3 className="text-xl">Email:</h3>
+                                <h3 className="text-xl">{job.company.contactMail}</h3>
 
                                 <p className="my-2 bg-red-100 p-2 font-bold">
                                     contact@loremipsum.com
@@ -69,7 +96,7 @@ const JobPage = () => {
 
                                 <h3 className="text-xl">Téléphone:</h3>
 
-                                <p className="my-2 bg-red-100 p-2 font-bold">1111-111-1111</p>
+                                <p className="my-2 bg-red-100 p-2 font-bold">{job.company.contactPhone}</p>
                             </div>
 
 
