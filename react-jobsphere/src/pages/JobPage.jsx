@@ -1,14 +1,15 @@
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams, useLoaderData } from "react-router-dom"
 import { FaLocationDot, FaArrowLeft } from 'react-icons/fa6'
 import { useEffect, useState } from "react"
 import Spinner from "../components/Spinner"
 
 const JobPage = ({deleteJob}) => {
-    const [job, setJob] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const { id } = useParams();
-
+    // const [job, setJob] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    // const { id } = useParams();
     const navigate = useNavigate();
+    const job = useLoaderData();
+    console.log(job);
 
     const onDeleteClick = (jobId) => {
         if (window.confirm("Voulez-vous vraiment supprimer ce job ?"));
@@ -18,28 +19,25 @@ const JobPage = ({deleteJob}) => {
         }
     
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`http://localhost:8000/jobs/${id}`);
-                const result = await response.json();
-                console.log(result);
-                setJob(result);
-            }
-            catch (error) {
-                console.log(error);
-            }
-            finally {
-                setLoading(false);
-            }
-        };
-        fetchData();
-    });
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch(`http://localhost:8000/jobs/${id}`);
+    //             const result = await response.json();
+    //             console.log(result);
+    //             setJob(result);
+    //         }
+    //         catch (error) {
+    //             console.log(error);
+    //         }
+    //         finally {
+    //             setLoading(false);
+    //         }
+    //     };
+    //     fetchData();
+    // });
     return (
         <div>
-            {loading ? (
-                <Spinner loading={loading} />
-            ) : (
                 <>
                     <section>
                         <div className="container m-auto py-6 px-6">
@@ -108,9 +106,14 @@ const JobPage = ({deleteJob}) => {
                         </div>
                     </section>
                 </>
-            )}
         </div>
     );
 }
 
-export default JobPage
+const  jobLoader = async({params}) => {
+    const response = await fetch(`http://localhost:8000/jobs/${params.id}`);
+    const result = await response.json();
+    return result;
+}
+
+export {JobPage as default, jobLoader};
