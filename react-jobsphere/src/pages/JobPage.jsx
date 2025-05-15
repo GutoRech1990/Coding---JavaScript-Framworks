@@ -1,6 +1,6 @@
-import { Link, useNavigate, useParams, useLoaderData } from "react-router-dom"
+import { Link, useNavigate, useLoaderData } from "react-router-dom"
 import { FaLocationDot, FaArrowLeft } from 'react-icons/fa6'
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 import Spinner from "../components/Spinner"
 
 const JobPage = ({deleteJob}) => {
@@ -89,12 +89,12 @@ const JobPage = ({deleteJob}) => {
 
                                     <div className="bg-white p-6 rounded-lg shadow-md mt-6">
                                         <h3 className="text-xl font-bold mb-6">Gestion</h3>
-                                        <a
+                                        <Link to={`/edit-job/${job.id}`}
                                             href="/add-job.html"
                                             className="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                                         >
                                             Editer job
-                                        </a>
+                                        </Link>
                                         <button onClick={()=> onDeleteClick(job.id)}
                                             className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                                         >
