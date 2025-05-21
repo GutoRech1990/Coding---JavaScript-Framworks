@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "patient_id": 47,
+    "vaccin_id": 33,
+    "vaccination_date": "2025-04-27"
+  },
+  {
+    "id": 2,
+    "patient_id": 33,
+    "vaccin_id": 33,
+    "vaccination_date": "2024-08-26"
+  },
+  {
+    "id": 3,
+    "patient_id": 39,
+    "vaccin_id": 11,
+    "vaccination_date": "2025-03-11"
+  },
+  {
+    "id": 4,
+    "patient_id": 40,
+    "vaccin_id": 8,
+    "vaccination_date": "2023-11-18"
+  },
+  {
+    "id": 5,
+    "patient_id": 38,
+    "vaccin_id": 13,
+    "vaccination_date": "2023-05-22"
+  },
+  {
+    "id": 6,
+    "patient_id": 38,
+    "vaccin_id": 13,
+    "vaccination_date": "2023-11-16"
+  },
+  {
+    "id": 7,
+    "patient_id": 14,
+    "vaccin_id": 18,
+    "vaccination_date": "2024-03-28"
+  },
+  {
+    "id": 8,
+    "patient_id": 4,
+    "vaccin_id": 42,
+    "vaccination_date": "2023-12-27"
+  },
+  {
+    "id": 9,
+    "patient_id": 8,
+    "vaccin_id": 32,
+    "vaccination_date": "2024-06-23"
+  },
+  {
+    "id": 10,
+    "patient_id": 9,
+    "vaccin_id": 5,
+    "vaccination_date": "2024-09-12"
+  },
+  {
+    "id": 11,
+    "patient_id": 48,
+    "vaccin_id": 6,
+    "vaccination_date": "2024-09-30"
+  },
+  {
+    "id": 12,
+    "patient_id": 42,
+    "vaccin_id": 28,
+    "vaccination_date": "2023-08-12"
+  },
+  {
+    "id": 13,
+    "patient_id": 16,
+    "vaccin_id": 29,
+    "vaccination_date": "2023-06-10"
+  },
+  {
+    "id": 14,
+    "patient_id": 39,
+    "vaccin_id": 12,
+    "vaccination_date": "2023-07-28"
+  },
+  {
+    "id": 15,
+    "patient_id": 8,
+    "vaccin_id": 21,
+    "vaccination_date": "2023-07-25"
+  },
+  {
+    "id": 16,
+    "patient_id": 47,
+    "vaccin_id": 1,
+    "vaccination_date": "2023-07-10"
+  },
+  {
+    "id": 17,
+    "patient_id": 44,
+    "vaccin_id": 18,
+    "vaccination_date": "2024-10-05"
+  },
+  {
+    "id": 18,
+    "patient_id": 13,
+    "vaccin_id": 17,
+    "vaccination_date": "2024-02-26"
+  },
+  {
+    "id": 19,
+    "patient_id": 17,
+    "vaccin_id": 39,
+    "vaccination_date": "2024-03-23"
+  },
+  {
+    "id": 20,
+    "patient_id": 8,
+    "vaccin_id": 43,
+    "vaccination_date": "2024-03-24"
+  },
+  {
+    "id": 21,
+    "patient_id": 34,
+    "vaccin_id": 5,
+    "vaccination_date": "2025-05-05"
+  },
+  {
+    "id": 22,
+    "patient_id": 12,
+    "vaccin_id": 44,
+    "vaccination_date": "2024-09-23"
+  },
+  {
+    "id": 23,
+    "patient_id": 15,
+    "vaccin_id": 42,
+    "vaccination_date": "2023-08-25"
+  },
+  {
+    "id": 24,
+    "patient_id": 13,
+    "vaccin_id": 28,
+    "vaccination_date": "2025-05-01"
+  },
+  {
+    "id": 25,
+    "patient_id": 32,
+    "vaccin_id": 6,
+    "vaccination_date": "2024-06-23"
+  },
+  {
+    "id": 26,
+    "patient_id": 10,
+    "vaccin_id": 16,
+    "vaccination_date": "2024-09-02"
+  },
+  {
+    "id": 27,
+    "patient_id": 38,
+    "vaccin_id": 23,
+    "vaccination_date": "2025-01-17"
+  },
+  {
+    "id": 28,
+    "patient_id": 18,
+    "vaccin_id": 22,
+    "vaccination_date": "2025-03-11"
+  },
+  {
+    "id": 29,
+    "patient_id": 17,
+    "vaccin_id": 50,
+    "vaccination_date": "2024-01-30"
+  },
+  {
+    "id": 30,
+    "patient_id": 39,
+    "vaccin_id": 49,
+    "vaccination_date": "2024-10-09"
+  },
+  {
+    "id": 31,
+    "patient_id": 11,
+    "vaccin_id": 49,
+    "vaccination_date": "2024-11-18"
+  },
+  {
+    "id": 32,
+    "patient_id": 43,
+    "vaccin_id": 22,
+    "vaccination_date": "2024-11-26"
+  },
+  {
+    "id": 33,
+    "patient_id": 31,
+    "vaccin_id": 23,
+    "vaccination_date": "2023-06-17"
+  },
+  {
+    "id": 34,
+    "patient_id": 31,
+    "vaccin_id": 33,
+    "vaccination_date": "2024-03-23"
+  },
+  {
+    "id": 35,
+    "patient_id": 45,
+    "vaccin_id": 13,
+    "vaccination_date": "2024-10-23"
+  },
+  {
+    "id": 36,
+    "patient_id": 32,
+    "vaccin_id": 39,
+    "vaccination_date": "2023-09-28"
+  },
+  {
+    "id": 37,
+    "patient_id": 30,
+    "vaccin_id": 27,
+    "vaccination_date": "2024-08-29"
+  },
+  {
+    "id": 38,
+    "patient_id": 31,
+    "vaccin_id": 20,
+    "vaccination_date": "2023-09-04"
+  },
+  {
+    "id": 39,
+    "patient_id": 11,
+    "vaccin_id": 43,
+    "vaccination_date": "2024-10-03"
+  },
+  {
+    "id": 40,
+    "patient_id": 5,
+    "vaccin_id": 45,
+    "vaccination_date": "2023-07-01"
+  },
+  {
+    "id": 41,
+    "patient_id": 20,
+    "vaccin_id": 28,
+    "vaccination_date": "2023-05-29"
+  },
+  {
+    "id": 42,
+    "patient_id": 33,
+    "vaccin_id": 22,
+    "vaccination_date": "2024-11-19"
+  },
+  {
+    "id": 43,
+    "patient_id": 1,
+    "vaccin_id": 8,
+    "vaccination_date": "2023-10-27"
+  },
+  {
+    "id": 44,
+    "patient_id": 7,
+    "vaccin_id": 13,
+    "vaccination_date": "2024-03-30"
+  },
+  {
+    "id": 45,
+    "patient_id": 39,
+    "vaccin_id": 45,
+    "vaccination_date": "2024-06-08"
+  },
+  {
+    "id": 46,
+    "patient_id": 36,
+    "vaccin_id": 45,
+    "vaccination_date": "2024-05-04"
+  },
+  {
+    "id": 47,
+    "patient_id": 30,
+    "vaccin_id": 41,
+    "vaccination_date": "2024-09-17"
+  },
+  {
+    "id": 48,
+    "patient_id": 49,
+    "vaccin_id": 50,
+    "vaccination_date": "2024-08-22"
+  },
+  {
+    "id": 49,
+    "patient_id": 45,
+    "vaccin_id": 44,
+    "vaccination_date": "2023-10-10"
+  },
+  {
+    "id": 50,
+    "patient_id": 6,
+    "vaccin_id": 34,
+    "vaccination_date": "2024-05-14"
+  }
+]
