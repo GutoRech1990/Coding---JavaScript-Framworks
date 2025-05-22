@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const CreateNewVaccin = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Utilisé pour la redirection après la création du vaccin
     // États pour les champs du formulaire
     const [name, setName] = useState('');
     const [fabricant, setFabricant] = useState('');
@@ -10,7 +10,7 @@ const CreateNewVaccin = () => {
 
     // Fonction pour gérer la soumission du formulaire de création de vaccin
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Empêche le rechargement de la page
         // Création de l'objet vaccin à envoyer à l'API
         const newVaccin = {
             name,
@@ -42,7 +42,7 @@ const CreateNewVaccin = () => {
                     <input
                         className="w-full border px-3 py-2 rounded"
                         type="text"
-                        value={name}
+                        value={name} // Champ pour le nom du vaccin
                         onChange={e => setName(e.target.value)}
                         required
                     />
@@ -53,7 +53,7 @@ const CreateNewVaccin = () => {
                     <input
                         className="w-full border px-3 py-2 rounded"
                         type="text"
-                        value={fabricant}
+                        value={fabricant} // Champ pour le fabricant du vaccin
                         onChange={e => setFabricant(e.target.value)}
                         required
                     />
@@ -64,7 +64,7 @@ const CreateNewVaccin = () => {
                     <input
                         className="w-full border px-3 py-2 rounded"
                         type="number"
-                        value={price}
+                        value={price} // Champ pour le prix du vaccin
                         onChange={e => setPrice(e.target.value)}
                         required
                         min="0"

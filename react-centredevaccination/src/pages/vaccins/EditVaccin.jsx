@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const EditVaccin = () => {
     const { id } = useParams(); // id du vaccin à éditer (récupéré depuis l'URL)
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Utilisé pour rediriger après la modification
     const [vaccin, setVaccin] = useState(null); // Stocke les données du vaccin à éditer
     const [name, setName] = useState(''); // Champ pour le nom du vaccin
     const [fabricant, setFabricant] = useState(''); // Champ pour le fabricant
@@ -51,15 +51,15 @@ const EditVaccin = () => {
         <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded shadow">
             <h2 className="text-xl font-bold mb-4 text-center">Éditer le vaccin</h2>
             {/* Formulaire d'édition du vaccin */}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}> 
                 <div className="mb-4">
                     <label className="block mb-2 font-semibold">Nom</label>
                     {/* Champ pour modifier le nom du vaccin */}
                     <input
                         className="w-full border px-3 py-2 rounded"
                         type="text"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
+                        value={name} // Champ pour le nom du vaccin
+                        onChange={e => setName(e.target.value)} // Met à jour le nom
                         required
                     />
                 </div>
@@ -69,8 +69,8 @@ const EditVaccin = () => {
                     <input
                         className="w-full border px-3 py-2 rounded"
                         type="text"
-                        value={fabricant}
-                        onChange={e => setFabricant(e.target.value)}
+                        value={fabricant} // Champ pour le fabricant du vaccin
+                        onChange={e => setFabricant(e.target.value)} // Met à jour le fabricant
                         required
                     />
                 </div>
@@ -80,8 +80,8 @@ const EditVaccin = () => {
                     <input
                         className="w-full border px-3 py-2 rounded"
                         type="number"
-                        value={price}
-                        onChange={e => setPrice(e.target.value)}
+                        value={price} // Champ pour le prix du vaccin
+                        onChange={e => setPrice(e.target.value)} // Met à jour le prix
                         required
                         min="0"
                     />
