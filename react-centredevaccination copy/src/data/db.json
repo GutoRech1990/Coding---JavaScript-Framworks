@@ -861,6 +861,12 @@
       "patient_id": "643a",
       "vaccin_id": "2",
       "vaccination_date": "2025-05-21"
+    },
+    {
+      "id": "5171",
+      "patient_id": "643a",
+      "vaccin_id": "10",
+      "vaccination_date": "2025-05-22"
     }
   ]
 }

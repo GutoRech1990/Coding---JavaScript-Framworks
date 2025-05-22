@@ -70,23 +70,23 @@ function IndexPatients() {
     };
 
     return (
-        <div className="min-h-screen py-12 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div className="min-h-screen py-4 md:py-12 bg-gradient-to-br from-blue-50 to-blue-100">
             {/* Modal de confirmation */}
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-                    <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full text-center">
+                    <div className="bg-white rounded-xl shadow-2xl p-4 md:p-8 max-w-md w-full text-center">
                         <div className="mb-6 text-lg">{modalContent.message}</div>
-                        <div className="flex justify-center gap-4">
+                        <div className="flex justify-center gap-4 flex-wrap">
                             {modalContent.onConfirm ? (
                                 <>
                                     <button
-                                        className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold shadow transition"
+                                        className="bg-red-500 hover:bg-red-600 text-white px-4 md:px-6 py-2 rounded-full font-semibold shadow transition"
                                         onClick={modalContent.onConfirm}
                                     >
                                         Oui, supprimer
                                     </button>
                                     <button
-                                        className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-full font-semibold shadow transition"
+                                        className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 md:px-6 py-2 rounded-full font-semibold shadow transition"
                                         onClick={() => setShowModal(false)}
                                     >
                                         Annuler
@@ -94,7 +94,7 @@ function IndexPatients() {
                                 </>
                             ) : (
                                 <button
-                                    className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full font-semibold shadow transition"
+                                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 md:px-6 py-2 rounded-full font-semibold shadow transition"
                                     onClick={() => setShowModal(false)}
                                 >
                                     Fermer
@@ -104,28 +104,29 @@ function IndexPatients() {
                     </div>
                 </div>
             )}
-            <div className="w-full px-4 max-w-4xl mx-auto">
-                <h1 className="text-3xl font-extrabold mb-8 text-center text-blue-800 drop-shadow">
+            <div className="w-full px-1 md:px-4 max-w-4xl mx-auto">
+                <h1 className="text-2xl md:text-3xl font-extrabold mb-4 md:mb-8 text-center text-blue-800 drop-shadow">
                     🧑‍⚕️ Liste des patients
                 </h1>
-                <div className="mb-8 flex justify-center">
+                <div className="mb-4 md:mb-8 flex justify-center">
                     <Link
                         to="/create-patient"
-                        className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold"
+                        className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-full shadow-lg hover:scale-105 hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold text-sm md:text-base"
                     >
                         <i className="fa-solid fa-plus"></i>
                         Nouveau patient
                     </Link>
                 </div>
                 <div className="overflow-x-auto rounded-xl shadow-lg bg-white">
-                    <table className="w-full rounded-xl overflow-hidden">
+                    <table className="w-full rounded-xl overflow-hidden text-sm md:text-base">
                         <thead>
                             <tr>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Nom</th>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Adresse</th>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Âge</th>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg whitespace-nowrap">Date de naissance</th>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Actions</th>
+                                <th className="px-1 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left">Nom</th>
+                                <th className="px-1 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left">Adresse</th>
+                                {/* Âge et Date de naissance seulement en desktop */}
+                                <th className="px-1 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left whitespace-nowrap hidden md:table-cell">Âge</th>
+                                <th className="px-1 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left whitespace-nowrap hidden md:table-cell">Date de naissance</th>
+                                <th className="px-1 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -134,32 +135,35 @@ function IndexPatients() {
                                     key={patient.id}
                                     className={`transition-colors duration-150 ${idx % 2 === 0 ? "bg-blue-50" : "bg-white"} hover:bg-blue-200/40`}
                                 >
-                                    <td className="px-6 py-3 border-b border-blue-100 font-medium">{patient.name}</td>
-                                    <td className="px-6 py-3 border-b border-blue-100">{patient.address}</td>
-                                    <td className="px-6 py-3 border-b border-blue-100">{calculateAge(patient.birthdate)}</td>
-                                    <td className="px-6 py-3 border-b border-blue-100 whitespace-nowrap">{patient.birthdate}</td>
-                                    <td className="px-6 py-3 border-b border-blue-100 whitespace-nowrap flex gap-2">
-                                        <Link
-                                            to={`/edit-patient/${patient.id}`}
-                                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow transition-all duration-150"
-                                            title="Éditer le patient"
-                                        >
-                                            <i className="fa-solid fa-user-pen"></i>
-                                        </Link>
-                                        <button
-                                            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow transition-all duration-150"
-                                            onClick={() => handleDelete(patient.id)}
-                                            title="Supprimer le patient"
-                                        >
-                                            <i className="fa-solid fa-eraser"></i>
-                                        </button>
-                                        <Link
-                                            to={`/vaccination/${patient.id}`}
-                                            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow transition-all duration-150"
-                                            title="Voir les vaccinations"
-                                        >
-                                            <i className="fa-solid fa-syringe"></i>
-                                        </Link>
+                                    <td className="px-1 md:px-6 py-2 md:py-3 border-b border-blue-100 font-medium">{patient.name}</td>
+                                    <td className="px-1 md:px-6 py-2 md:py-3 border-b border-blue-100">{patient.address}</td>
+                                    {/* Âge et Date de naissance seulement en desktop */}
+                                    <td className="px-1 md:px-6 py-2 md:py-3 border-b border-blue-100 hidden md:table-cell">{calculateAge(patient.birthdate)}</td>
+                                    <td className="px-1 md:px-6 py-2 md:py-3 border-b border-blue-100 whitespace-nowrap hidden md:table-cell">{patient.birthdate}</td>
+                                    <td className="px-1 md:px-6 py-2 md:py-3 border-b border-blue-100 whitespace-nowrap">
+                                        <div className="flex gap-0.5 md:gap-2 flex-nowrap">
+                                            <Link
+                                                to={`/edit-patient/${patient.id}`}
+                                                className="bg-blue-500 hover:bg-blue-600 text-white px-2 md:px-4 py-2 rounded-full shadow transition-all duration-150"
+                                                title="Éditer le patient"
+                                            >
+                                                <i className="fa-solid fa-user-pen"></i>
+                                            </Link>
+                                            <button
+                                                className="bg-red-500 hover:bg-red-600 text-white px-2 md:px-4 py-2 rounded-full shadow transition-all duration-150"
+                                                onClick={() => handleDelete(patient.id)}
+                                                title="Supprimer le patient"
+                                            >
+                                                <i className="fa-solid fa-eraser"></i>
+                                            </button>
+                                            <Link
+                                                to={`/vaccination/${patient.id}`}
+                                                className="bg-green-500 hover:bg-green-600 text-white px-2 md:px-4 py-2 rounded-full shadow transition-all duration-150"
+                                                title="Voir les vaccinations"
+                                            >
+                                                <i className="fa-solid fa-syringe"></i>
+                                            </Link>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

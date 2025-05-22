@@ -116,13 +116,13 @@ function IndexVaccins() {
                     </Link>
                 </div>
                 <div className="overflow-x-auto rounded-xl shadow-lg bg-white">
-                    <table className="w-full rounded-xl overflow-hidden">
+                    <table className="w-full rounded-xl overflow-hidden text-sm md:text-base">
                         <thead>
                             <tr>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Nom</th>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Fabricant</th>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Prix</th>
-                                <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Actions</th>
+                                <th className="px-2 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left">Nom</th>
+                                <th className="px-2 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left">Fabricant</th>
+                                <th className="px-2 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left">Prix</th>
+                                <th className="px-2 md:px-6 py-2 md:py-4 bg-blue-100 text-blue-900 font-bold text-left">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -131,24 +131,26 @@ function IndexVaccins() {
                                     key={vaccine.id}
                                     className={`transition-colors duration-150 ${idx % 2 === 0 ? "bg-blue-50" : "bg-white"} hover:bg-blue-200/40`}
                                 >
-                                    <td className="px-6 py-3 border-b border-blue-100 font-medium">{vaccine.name}</td>
-                                    <td className="px-6 py-3 border-b border-blue-100">{vaccine.fabricant}</td>
-                                    <td className="px-6 py-3 border-b border-blue-100">{vaccine.price} €</td>
-                                    <td className="px-6 py-3 border-b border-blue-100 whitespace-nowrap flex gap-2">
-                                        <Link
-                                            to={`/edit-vaccin/${vaccine.id}`}
-                                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow transition-all duration-150"
-                                            title="Éditer le vaccin"
-                                        >
-                                            <i className="fa-solid fa-pen"></i>
-                                        </Link>
-                                        <button
-                                            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow transition-all duration-150"
-                                            title="Supprimer le vaccin"
-                                            onClick={() => handleDelete(vaccine.id)}
-                                        >
-                                            <i className="fa-solid fa-trash"></i>
-                                        </button>
+                                    <td className="px-2 md:px-6 py-2 md:py-3 border-b border-blue-100 font-medium">{vaccine.name}</td>
+                                    <td className="px-2 md:px-6 py-2 md:py-3 border-b border-blue-100">{vaccine.fabricant}</td>
+                                    <td className="px-2 md:px-6 py-2 md:py-3 border-b border-blue-100">{vaccine.price} €</td>
+                                    <td className="px-2 md:px-6 py-2 md:py-3 border-b border-blue-100 whitespace-nowrap">
+                                        <div className="flex gap-0.5 md:gap-2 flex-nowrap">
+                                            <Link
+                                                to={`/edit-vaccin/${vaccine.id}`}
+                                                className="bg-blue-500 hover:bg-blue-600 text-white px-2 md:px-4 py-2 rounded-full shadow transition-all duration-150"
+                                                title="Éditer le vaccin"
+                                            >
+                                                <i className="fa-solid fa-pen"></i>
+                                            </Link>
+                                            <button
+                                                className="bg-red-500 hover:bg-red-600 text-white px-2 md:px-4 py-2 rounded-full shadow transition-all duration-150"
+                                                title="Supprimer le vaccin"
+                                                onClick={() => handleDelete(vaccine.id)}
+                                            >
+                                                <i className="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}
