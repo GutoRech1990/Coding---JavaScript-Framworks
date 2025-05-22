@@ -305,6 +305,12 @@
       "name": "Abada",
       "address": "Rue XYZ",
       "birthdate": "1990-03-19"
+    },
+    {
+      "id": "bd79",
+      "name": "Jose Rech",
+      "address": "Rue XSCDF",
+      "birthdate": "1990-03-19"
     }
   ],
   "vaccins": [

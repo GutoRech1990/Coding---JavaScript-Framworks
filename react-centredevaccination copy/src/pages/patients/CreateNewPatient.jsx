@@ -7,6 +7,7 @@ const CreateNewPatient = () => {
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [birthdate, setBirthdate] = useState('');
+    const [showToast, setShowToast] = useState(false);
 
     // Fonction pour gérer la soumission du formulaire de création de patient
     const handleSubmit = (e) => {
@@ -25,14 +26,23 @@ const CreateNewPatient = () => {
         })
         .then(res => res.json())
         .then(() => {
-            alert("Patient créé avec succès !");
-            // Redirige vers la liste des patients après la création
-            navigate('/patients');
+            setShowToast(true);
+            setTimeout(() => {
+                setShowToast(false);
+                navigate('/patients');
+            }, 1800);
         });
     };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 py-12">
+            {/* Toast de succès */}
+            {showToast && (
+                <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2 animate-fade-in">
+                    <i className="fa-solid fa-circle-check"></i>
+                    Patient créé avec succès !
+                </div>
+            )}
             <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8">
                 <h2 className="text-2xl font-extrabold mb-6 text-center text-blue-800 drop-shadow">
                     <i className="fa-solid fa-user-plus mr-2 text-blue-500"></i>

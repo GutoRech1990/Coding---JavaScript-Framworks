@@ -10,11 +10,14 @@ import EditPatients from './pages/patients/EditPatients';
 import CreateNewPatient from './pages/patients/CreateNewPatient';
 import EditVaccin from './pages/vaccins/EditVaccin';
 import CreateNewVaccin from './pages/vaccins/CreateNewVaccin';
+import IndexPage from './pages/indexPage';
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
+
       <Route path="/" element={<MainLayout />}>
+        <Route index element={<IndexPage />} />
         <Route path="patients" element={<IndexPatients/>}/>
         <Route path="vaccins" element={<IndexVaccins/>}/>
         <Route path="vaccination/:id" element={<VaccinationPatient/>}/>
