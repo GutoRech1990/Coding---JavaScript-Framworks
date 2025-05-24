@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 const CreateNewVaccin = () => {
     const navigate = useNavigate();
+    // États pour les champs du formulaire et le toast de succès
     const [name, setName] = useState('');
     const [fabricant, setFabricant] = useState('');
     const [price, setPrice] = useState('');
     const [showToast, setShowToast] = useState(false);
 
+    // Fonction pour gérer la soumission du formulaire de création de vaccin
     const handleSubmit = (e) => {
         e.preventDefault();
         const newVaccin = {
@@ -15,6 +17,7 @@ const CreateNewVaccin = () => {
             fabricant,
             price: parseFloat(price)
         };
+        // Envoie le nouveau vaccin à l'API json-server
         fetch('http://localhost:3001/vaccins', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

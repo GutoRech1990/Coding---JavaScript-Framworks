@@ -6,7 +6,7 @@ const CreateNewVaccination = () => {
     const navigate = useNavigate();
     const [vaccins, setVaccins] = useState([]); // Stocke la liste des vaccins
     const [selectedVaccine, setSelectedVaccine] = useState(''); // Champ pour le vaccin sélectionné
-    const [showToast, setShowToast] = useState(false);
+    const [showToast, setShowToast] = useState(false); // Contrôle l'affichage du toast de succès
 
     // Obtenir la date d'aujourd'hui au format YYYY-MM-DD
     const today = new Date().toISOString().split('T')[0];
@@ -38,10 +38,10 @@ const CreateNewVaccination = () => {
         })
         .then(res => res.json())
         .then(() => {
-            setShowToast(true);
+            setShowToast(true); // Affiche le toast de succès
             setTimeout(() => {
                 setShowToast(false);
-                navigate(`/vaccination/${id}`);
+                navigate(`/vaccination/${id}`); // Redirige vers la page des vaccinations du patient
             }, 1800);
         });
     };

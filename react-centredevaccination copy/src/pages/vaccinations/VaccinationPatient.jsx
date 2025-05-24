@@ -6,8 +6,8 @@ const VaccinationPatient = () => {
     const [patient, setPatient] = useState(null) // Stocke les infos du patient
     const [vaccinations, setVaccinations] = useState([]) // Stocke les vaccinations du patient
     const [vaccins, setVaccins] = useState([]) // Stocke la liste de tous les vaccins
-    const [showModal, setShowModal] = useState(false);
-    const [modalVaccinationId, setModalVaccinationId] = useState(null);
+    const [showModal, setShowModal] = useState(false); // Contrôle l'affichage du modal de suppression
+    const [modalVaccinationId, setModalVaccinationId] = useState(null); // Stocke l'id de la vaccination à supprimer
 
     // Effet pour charger les données du patient, ses vaccinations et la liste des vaccins
     useEffect(() => {
@@ -38,12 +38,13 @@ const VaccinationPatient = () => {
         }
     })
 
-    // Fonction pour supprimer une vaccination (moderne)
+    // Fonction pour ouvrir le modal de suppression d'une vaccination
     const handleDelete = (vaccinationId) => {
         setModalVaccinationId(vaccinationId);
         setShowModal(true);
     };
 
+    // Fonction pour confirmer la suppression d'une vaccination
     const confirmDelete = () => {
         fetch(`http://localhost:3001/vaccinations/${modalVaccinationId}`, {
             method: 'DELETE'
@@ -66,7 +67,7 @@ const VaccinationPatient = () => {
 
     return (
         <div className="min-h-screen py-12 bg-gradient-to-br from-blue-50 to-blue-100">
-            {/* Modal de confirmation */}
+            {/* Modal de confirmation pour la suppression d'une vaccination */}
             {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
                     <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full text-center">
@@ -105,6 +106,7 @@ const VaccinationPatient = () => {
                             <strong>Âge:</strong> {new Date().getFullYear() - new Date(patient.birthdate).getFullYear()}
                         </div>
                     </div>
+                    {/* Bouton pour enregistrer une nouvelle vaccination */}
                     <Link
                         to={`/create-vaccination/${patient.id}`}
                         className="inline-flex items-center gap-2 mt-4 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold"
@@ -123,19 +125,26 @@ const VaccinationPatient = () => {
                     <table className="w-full rounded-xl overflow-hidden">
                         <thead>
                             <tr>
+                                {/* Nom du vaccin */}
                                 <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Nom du vaccin</th>
+                                {/* Date de la vaccination */}
                                 <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Date</th>
+                                {/* Actions (édition, suppression) */}
                                 <th className="px-6 py-4 bg-blue-100 text-blue-900 font-bold text-left text-lg">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {/* Affichage de chaque vaccination du patient */}
                             {patientVaccinationDetails.map((vaccination, idx) => (
                                 <tr
                                     key={idx}
                                     className={`transition-colors duration-150 ${idx % 2 === 0 ? "bg-blue-50" : "bg-white"} hover:bg-blue-200/40`}
                                 >
+                                    {/* Nom du vaccin */}
                                     <td className="px-6 py-3 border-b border-blue-100 font-medium">{vaccination.vaccineName}</td>
+                                    {/* Date de la vaccination */}
                                     <td className="px-6 py-3 border-b border-blue-100">{vaccination.vaccineDate}</td>
+                                    {/* Boutons d'action (suppression et édition) */}
                                     <td className="px-6 py-3 border-b border-blue-100 whitespace-nowrap flex gap-2">
                                         <button
                                             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full shadow transition-all duration-150"

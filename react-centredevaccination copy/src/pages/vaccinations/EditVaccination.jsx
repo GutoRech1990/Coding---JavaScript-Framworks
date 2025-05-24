@@ -8,7 +8,7 @@ const EditVaccination = () => {
     const [vaccins, setVaccins] = useState([]); // Stocke la liste de tous les vaccins
     const [selectedVaccine, setSelectedVaccine] = useState(''); // Champ pour le vaccin sélectionné
     const [date, setDate] = useState(''); // Champ pour la date de vaccination
-    const [showToast, setShowToast] = useState(false);
+    const [showToast, setShowToast] = useState(false); // Contrôle l'affichage du toast de succès
 
     // Effet pour charger la vaccination et la liste des vaccins lors du montage ou changement d'id
     useEffect(() => {
@@ -44,10 +44,10 @@ const EditVaccination = () => {
         })
         .then(res => res.json())
         .then(() => {
-            setShowToast(true);
+            setShowToast(true); // Affiche le toast de succès
             setTimeout(() => {
                 setShowToast(false);
-                navigate(`/vaccination/${vaccination.patient_id}`);
+                navigate(`/vaccination/${vaccination.patient_id}`); // Redirige vers la page des vaccinations du patient
             }, 1800);
         });
     };

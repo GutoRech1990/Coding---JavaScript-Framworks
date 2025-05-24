@@ -4,11 +4,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 const EditVaccin = () => {
     const { id } = useParams(); // id du vaccin à éditer (récupéré depuis l'URL)
     const navigate = useNavigate(); // Utilisé pour rediriger après la modification
+
+    // États pour stocker les données du vaccin et les champs du formulaire
     const [vaccin, setVaccin] = useState(null); // Stocke les données du vaccin à éditer
     const [name, setName] = useState(''); // Champ pour le nom du vaccin
     const [fabricant, setFabricant] = useState(''); // Champ pour le fabricant
     const [price, setPrice] = useState(''); // Champ pour le prix
-    const [showToast, setShowToast] = useState(false);
+    const [showToast, setShowToast] = useState(false); // Contrôle l'affichage du toast de succès
 
     // Effet pour charger les infos du vaccin à éditer lors du montage du composant ou changement d'id
     useEffect(() => {
@@ -25,12 +27,14 @@ const EditVaccin = () => {
     // Fonction pour gérer la soumission du formulaire d'édition
     const handleSubmit = (e) => {
         e.preventDefault();
+        // Prépare l'objet vaccin mis à jour à envoyer à l'API
         const updatedVaccin = {
             ...vaccin,
             name,
             fabricant,
             price
         };
+        // Envoie la requête PUT pour mettre à jour le vaccin
         fetch(`http://localhost:3001/vaccins/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -38,10 +42,10 @@ const EditVaccin = () => {
         })
         .then(res => res.json())
         .then(() => {
-            setShowToast(true);
+            setShowToast(true); // Affiche le toast de succès
             setTimeout(() => {
                 setShowToast(false);
-                navigate('/vaccins');
+                navigate('/vaccins'); // Redirige vers la liste des vaccins
             }, 1800);
         });
     };
@@ -63,6 +67,7 @@ const EditVaccin = () => {
                     <i className="fa-solid fa-syringe mr-2 text-blue-500"></i>
                     Éditer le vaccin
                 </h2>
+                {/* Formulaire d'édition du vaccin */}
                 <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
                         <label className="block mb-2 font-semibold text-blue-700">Nom</label>
